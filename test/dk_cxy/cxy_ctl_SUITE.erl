@@ -151,4 +151,3 @@ check_execute_pid(_Config) ->
 put_pdict(Key, Value) ->
     put(Key, Value),
     receive {From, get_pdict, Key} -> From ! {get_pdict, self(), get(Key)} end.
-            
